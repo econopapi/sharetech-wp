@@ -8,18 +8,15 @@
  * @since 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Define Constants
  */
 define( 'CHILD_THEME_SHARETECH_VERSION', '1.0.0' );
 
-/**
- * Enqueue styles
- */
-function child_enqueue_styles() {
+require_once get_stylesheet_directory() . '/includes/theme-setup.php';
 
-	wp_enqueue_style( 'sharetech-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_SHARETECH_VERSION, 'all' );
-
-}
-
-add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+sharetech_theme_setup();
