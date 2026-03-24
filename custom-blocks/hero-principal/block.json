@@ -1,0 +1,114 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sharetech/hero-principal",
+	"version": "1.0.0",
+	"title": "ShareTech Hero Principal",
+	"category": "design",
+	"icon": "cover-image",
+	"description": "Hero principal editable para la front page.",
+	"textdomain": "sharetech",
+	"supports": {
+		"html": false,
+		"align": [
+			"full"
+		]
+	},
+	"attributes": {
+		"kicker": {
+			"type": "string",
+			"default": "NUEVO MODELO DISPONIBLE — X4000"
+		},
+		"percentage": {
+			"type": "string",
+			"default": "80%"
+		},
+		"headingLineOne": {
+			"type": "string",
+			"default": "de tus"
+		},
+		"headingLineTwo": {
+			"type": "string",
+			"default": "trabajadores."
+		},
+		"subtitle": {
+			"type": "string",
+			"default": "Un equipo más pequeño que nunca te va a detener."
+		},
+		"description": {
+			"type": "string",
+			"default": "La Mini PC X4000 con Intel Celeron N5095 y Windows Pro cubre las necesidades del 80% de los perfiles de trabajo en tu empresa — a una fracción del espacio y el costo."
+		},
+		"primaryButtonText": {
+			"type": "string",
+			"default": "Ver productos"
+		},
+		"primaryButtonUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"secondaryButtonText": {
+			"type": "string",
+			"default": "Hablar con un asesor"
+		},
+		"secondaryButtonUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"specTopRight": {
+			"type": "string",
+			"default": "Intel® N5095"
+		},
+		"specMiddleRight": {
+			"type": "string",
+			"default": "SSD 256GB+"
+		},
+		"specBottomLeft": {
+			"type": "string",
+			"default": "Windows Pro"
+		},
+		"productLabel": {
+			"type": "string",
+			"default": "MINI PC X4000"
+		},
+		"productPlaceholder": {
+			"type": "string",
+			"default": "[ Imagen del producto ]"
+		},
+		"productImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"productImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"productImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"featureOne": {
+			"type": "string",
+			"default": "18 meses de garantía"
+		},
+		"featureTwo": {
+			"type": "string",
+			"default": "Soporte técnico incluido"
+		},
+		"featureThree": {
+			"type": "string",
+			"default": "INTEL®"
+		},
+		"featureFour": {
+			"type": "string",
+			"default": "WIN PRO"
+		},
+		"featureFive": {
+			"type": "string",
+			"default": "SSD"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./style.css"
+}
