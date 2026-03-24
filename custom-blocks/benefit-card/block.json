@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sharetech/benefit-card",
+	"version": "1.0.0",
+	"title": "ShareTech Benefit Card",
+	"category": "design",
+	"icon": "index-card",
+	"description": "Tarjeta atómica de beneficios para front page.",
+	"textdomain": "sharetech",
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Tamaño que no estorba"
+		},
+		"description": {
+			"type": "string",
+			"default": "Caben en cualquier escritorio, detrás del monitor o en un rack. Menos cables, menos espacio, igual de productivos."
+		},
+		"iconUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"iconAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"iconId": {
+			"type": "number",
+			"default": 0
+		},
+		"enableHover": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./style.css"
+}

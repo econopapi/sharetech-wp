@@ -9,3 +9,303 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sharetech
 Template: astra
 */
+
+a {
+    text-decoration: none!important;
+}
+
+/* Newsletter CTA (Forminator) */
+.sharetech-newsletter-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+.sharetech-newsletter-form .forminator-ui.forminator-custom-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-response-message {
+    grid-column: 1 / -1;
+    margin: 0 0 8px;
+    border-radius: 10px;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-row {
+    margin: 0;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-row:not(.forminator-row-last) {
+    grid-column: 1;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-row.forminator-row-last {
+    grid-column: 2;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-col,
+.sharetech-newsletter-form .forminator-ui .forminator-field {
+    margin: 0;
+    padding: 0;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-input.forminator-email--field {
+    min-height: 60px;
+    padding: 0 20px;
+    border-radius: 12px!important;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: #253f67;
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-input.forminator-email--field::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-input.forminator-email--field:focus {
+    border-color: #60a5fa;
+    background: #2b4872;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.28);
+    outline: none;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-button.forminator-button-submit {
+    min-height: 60px;
+    padding: 0 30px;
+    border: 1px solid transparent;
+    border-radius: 12px!important;
+    background: #2d7cf6;
+    color: #ffffff;
+    font-size: 1.95rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-button.forminator-button-submit:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.sharetech-newsletter-form .forminator-ui .forminator-button.forminator-button-submit:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+    .sharetech-newsletter-form .forminator-ui.forminator-custom-form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .sharetech-newsletter-form .forminator-ui .forminator-row:not(.forminator-row-last),
+    .sharetech-newsletter-form .forminator-ui .forminator-row.forminator-row-last {
+        grid-column: 1;
+    }
+
+    .sharetech-newsletter-form .forminator-ui .forminator-button.forminator-button-submit {
+        width: 100%;
+    }
+}
+
+/* Custom Astra footer override */
+.sharetech-footer {
+    background: #020f27;
+    color: #94a3b8;
+    padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.2rem, 3vw, 2rem);
+}
+
+.sharetech-footer__inner {
+    width: min(1400px, 92%);
+    margin: 0 auto;
+}
+
+.sharetech-footer__grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 1.25fr) repeat(3, minmax(140px, 1fr)) minmax(180px, 1fr);
+    gap: clamp(1rem, 2vw, 2rem);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.17);
+}
+
+.sharetech-footer__brand-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.2rem, 1.9vw, 1.8rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #f8fafc;
+}
+
+.sharetech-footer__brand-text {
+    margin: 0;
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    line-height: 1.65;
+    max-width: 34ch;
+    color: #64748b;
+}
+
+.sharetech-footer__title {
+    margin: 0 0 1rem;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #e2e8f0;
+}
+
+.sharetech-footer__menu,
+.sharetech-footer__contact-list,
+.sharetech-footer__legal-menu,
+.sharetech-footer__social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sharetech-footer__menu li + li,
+.sharetech-footer__contact-list li + li {
+    margin-top: 0.8rem;
+}
+
+.sharetech-footer__menu a,
+.sharetech-footer__contact-list a,
+.sharetech-footer__legal-menu a {
+    color: #64748b;
+    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+    line-height: 1.45;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sharetech-footer__menu a:hover,
+.sharetech-footer__contact-list a:hover,
+.sharetech-footer__legal-menu a:hover {
+    color: #cbd5e1;
+}
+
+.sharetech-footer__menu a:focus-visible,
+.sharetech-footer__contact-list a:focus-visible,
+.sharetech-footer__legal-menu a:focus-visible,
+.sharetech-footer__social a:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+.sharetech-footer__contact-list li {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.45;
+    color: #64748b;
+    word-break: break-word;
+}
+
+.sharetech-footer__social {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.sharetech-footer__social a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: rgba(15, 23, 42, 0.3);
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: lowercase;
+    transition: all 0.2s ease;
+}
+
+.sharetech-footer__social a:hover {
+    background: rgba(30, 64, 175, 0.3);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #dbeafe;
+}
+
+.sharetech-footer__bottom {
+    padding-top: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sharetech-footer__copyright {
+    margin: 0;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    line-height: 1.4;
+    color: #64748b;
+}
+
+.sharetech-footer__legal-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+    .sharetech-footer__grid {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+    }
+
+    .sharetech-footer__brand {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 767px) {
+    .sharetech-footer {
+        padding-top: 1.8rem;
+    }
+
+    .sharetech-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .sharetech-footer__brand {
+        grid-column: auto;
+    }
+
+    .sharetech-footer__social {
+        margin-top: 1rem;
+    }
+
+    .sharetech-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

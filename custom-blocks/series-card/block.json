@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sharetech/series-card",
+	"version": "1.0.0",
+	"title": "ShareTech Series Card",
+	"category": "design",
+	"icon": "cover-image",
+	"description": "Tarjeta de serie de producto con imagen configurable, bullets y CTA.",
+	"textdomain": "sharetech",
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"attributes": {
+		"kicker": {
+			"type": "string",
+			"default": "PARA EQUIPOS QUE NO SE DETIENEN"
+		},
+		"title": {
+			"type": "string",
+			"default": "SERIES K"
+		},
+		"description": {
+			"type": "string",
+			"default": "Diseñada para cargas de trabajo intensivas: análisis de datos, gráficos, multitarea pesada y entornos de alta demanda."
+		},
+		"items": {
+			"type": "array",
+			"default": [
+				"Procesadores AMD Ryzen",
+				"Hasta 32GB RAM y 1TB NVMe",
+				"Ideal para perfiles técnicos y creativos"
+			]
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Ver Serie K"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./style.css"
+}
