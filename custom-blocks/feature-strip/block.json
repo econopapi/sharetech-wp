@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sharetech/feature-strip",
+	"version": "1.0.0",
+	"title": "ShareTech Feature Strip",
+	"category": "design",
+	"icon": "screenoptions",
+	"description": "Franja de tarjetas con icono, título y descripción para destacar beneficios.",
+	"textdomain": "sharetech",
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [
+				{
+					"icon": "◻",
+					"title": "Procesadores Intel / AMD",
+					"description": "Desde N-series para oficina hasta Ryzen para demanda alta. El rendimiento adecuado sin pagar de más."
+				},
+				{
+					"icon": "💾",
+					"title": "Almacenamiento SSD",
+					"description": "Arranque en menos de 10 segundos. Sin partes mecánicas, menor riesgo de falla y mayor durabilidad."
+				},
+				{
+					"icon": "🪟",
+					"title": "Windows 11 Pro",
+					"description": "Licencia original incluida. Compatible con todas las herramientas empresariales de Microsoft 365."
+				},
+				{
+					"icon": "✅",
+					"title": "18 meses de garantía",
+					"description": "Garantía oficial con atención en México. Soporte técnico incluido en todos los modelos."
+				}
+			]
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./style.css"
+}
