@@ -1,0 +1,133 @@
+.wp-block-sharetech-series-card.sharetech-series-card {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+	background: #081b39;
+	border: 1px solid rgba(29, 89, 183, 0.65);
+	border-radius: 18px;
+	overflow: hidden;
+	color: #dbeafe;
+}
+
+.sharetech-series-card__media {
+	background: radial-gradient(circle at 48% 52%, rgba(37, 99, 235, 0.35), transparent 48%), linear-gradient(135deg, #102c5a, #0a2349);
+	padding: clamp(1.25rem, 2.5vw, 2.4rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 290px;
+}
+
+.sharetech-series-card__image {
+	max-width: min(100%, 280px);
+	max-height: 320px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: 12px;
+	box-shadow: 0 16px 30px rgba(2, 15, 37, 0.35);
+}
+
+.sharetech-series-card__image-placeholder {
+	width: min(100%, 150px);
+	aspect-ratio: 3 / 4;
+	border-radius: 14px;
+	border: 1px solid rgba(148, 163, 184, 0.4);
+	background: linear-gradient(145deg, rgba(59, 130, 246, 0.22), rgba(30, 64, 175, 0.28));
+}
+
+.sharetech-series-card__content {
+	padding: clamp(1.2rem, 2.2vw, 2rem);
+	background: linear-gradient(180deg, #061a3a 0%, #04142f 100%);
+}
+
+.sharetech-series-card__kicker {
+	margin: 0 0 0.55rem;
+	font-size: 0.77rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #3b82f6;
+}
+
+.sharetech-series-card__title {
+	margin: 0;
+	font-size: clamp(2rem, 3.8vw, 3.2rem);
+	line-height: 1;
+	font-weight: 800;
+	color: #f8fafc;
+}
+
+.sharetech-series-card__description {
+	margin: 0.9rem 0 1.1rem;
+	font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+	line-height: 1.6;
+	color: #94a3b8;
+}
+
+.sharetech-series-card__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.55rem;
+}
+
+.sharetech-series-card__list-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+	line-height: 1.5;
+	color: #cbd5e1;
+}
+
+.sharetech-series-card__list-item::before {
+	content: '✓';
+	font-weight: 700;
+	color: #3b82f6;
+	margin-top: 0.05rem;
+}
+
+.sharetech-series-card__list-controls {
+	margin-top: 0.9rem;
+}
+
+.sharetech-series-card__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.7rem 1.35rem;
+	margin-top: 1.35rem;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	background: #2563eb;
+	color: #ffffff;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sharetech-series-card__button:hover {
+	background: #1d4ed8;
+	color: #ffffff;
+	transform: translateY(-1px);
+}
+
+.sharetech-series-card__button:focus-visible {
+	outline: 3px solid #93c5fd;
+	outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+	.wp-block-sharetech-series-card.sharetech-series-card {
+		grid-template-columns: 1fr;
+	}
+
+	.sharetech-series-card__media {
+		min-height: 230px;
+	}
+
+	.sharetech-series-card__title {
+		font-size: clamp(1.7rem, 7vw, 2.4rem);
+	}
+}
