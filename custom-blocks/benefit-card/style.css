@@ -16,8 +16,8 @@
 }
 
 .sharetech-benefit-card__icon-wrap {
-	width: 56px;
-	height: 56px;
+	width: var(--sharetech-benefit-icon-size, 56px);
+	height: var(--sharetech-benefit-icon-size, 56px);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -28,14 +28,14 @@
 }
 
 .sharetech-benefit-card__icon {
-	width: 28px;
-	height: 28px;
+	width: calc(var(--sharetech-benefit-icon-size, 56px) * 0.5);
+	height: calc(var(--sharetech-benefit-icon-size, 56px) * 0.5);
 	object-fit: contain;
 }
 
 .sharetech-benefit-card__icon-placeholder {
-	width: 18px;
-	height: 18px;
+	width: calc(var(--sharetech-benefit-icon-size, 56px) * 0.32);
+	height: calc(var(--sharetech-benefit-icon-size, 56px) * 0.32);
 	border-radius: 4px;
 	background: rgba(147, 197, 253, 0.75);
 	display: inline-block;

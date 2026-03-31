@@ -1,14 +1,18 @@
 ( function ( blocks, blockEditor, components, i18n ) {
 	const { registerBlockType } = blocks;
 	const { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck } = blockEditor;
-	const { PanelBody, ToggleControl, TextControl, Button } = components;
+	const { PanelBody, ToggleControl, TextControl, Button, RangeControl } = components;
 	const { __ } = i18n;
 
 	registerBlockType( 'sharetech/benefit-card', {
 		edit: function ( props ) {
 			const { attributes, setAttributes } = props;
+			const iconSize = Number.isFinite( attributes.iconSize ) ? attributes.iconSize : 56;
 			const blockProps = useBlockProps( {
-				className: attributes.enableHover ? 'sharetech-benefit-card is-hover-enabled' : 'sharetech-benefit-card'
+				className: attributes.enableHover ? 'sharetech-benefit-card is-hover-enabled' : 'sharetech-benefit-card',
+				style: {
+					'--sharetech-benefit-icon-size': iconSize + 'px'
+				}
 			} );
 
 			return [
@@ -29,6 +33,17 @@
 					wp.element.createElement(
 						PanelBody,
 						{ title: __( 'Ícono', 'sharetech' ), initialOpen: false },
+						wp.element.createElement( RangeControl, {
+							label: __( 'Tamaño del ícono', 'sharetech' ),
+							value: iconSize,
+							onChange: function ( value ) {
+								setAttributes( { iconSize: value || 56 } );
+							},
+							min: 36,
+							max: 96,
+							step: 2,
+							help: __( 'Define el tamaño base del contenedor del ícono.', 'sharetech' )
+						} ),
 						wp.element.createElement(
 							MediaUploadCheck,
 							{},
@@ -116,8 +131,12 @@
 
 		save: function ( props ) {
 			const { attributes } = props;
+			const iconSize = Number.isFinite( attributes.iconSize ) ? attributes.iconSize : 56;
 			const blockProps = useBlockProps.save( {
-				className: attributes.enableHover ? 'sharetech-benefit-card is-hover-enabled' : 'sharetech-benefit-card'
+				className: attributes.enableHover ? 'sharetech-benefit-card is-hover-enabled' : 'sharetech-benefit-card',
+				style: {
+					'--sharetech-benefit-icon-size': iconSize + 'px'
+				}
 			} );
 
 			return wp.element.createElement(
