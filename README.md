@@ -13,7 +13,43 @@ Licencia: Pendiente
 	- `enqueue.php`: encolado de assets globales del tema.
 	- `blocks.php`: registro de custom blocks de Gutenberg.
 	- `footer.php`: override del footer de Astra + settings de Customizer + registro de menús de footer.
+	- `page-hero.php`: helpers para resolver imagen Hero en páginas (`featured image` o fallback por defecto).
 - `custom-blocks/`: bloques personalizados por feature.
+- `template-parts/page/hero.php`: parcial de Hero para páginas individuales.
+- `page.php`: override de template para páginas, con Hero + contenido.
+
+## Hero para páginas (`page.php`)
+
+Se implementó un Hero para páginas individuales que acompaña el título principal.
+
+Comportamiento:
+
+- El Hero NO se muestra cuando la página actual es la homepage (front page).
+- La homepage mantiene su layout original (sin wrapper interno `sharetech-page-content__inner`) para no alterar el diseño full-width existente.
+- Si la página tiene imagen destacada, se usa como fondo del Hero.
+- Si no tiene imagen destacada, se usa fallback automático desde:
+	- `assets/img/hero1.jpg`
+	- `assets/img/hero2.jpg`
+	- `assets/img/hero3.jpg`
+- El fallback es determinístico por ID de página para mantener consistencia visual entre recargas.
+
+Notas de implementación:
+
+- Markup del Hero desacoplado en `template-parts/page/hero.php`.
+- Lógica de selección de imagen en `includes/page-hero.php`.
+- Estilos responsive y accesibles añadidos en `style.css` bajo la sección `Page template hero`.
+
+### Cómo intercambiar entre Hero 1, 2 y 3
+
+Ahora puedes cambiar el fallback global sin tocar código:
+
+- Ir a `Apariencia > Personalizar > ShareTech Hero de Páginas`.
+- En el campo `Hero fallback por defecto` elegir:
+	- `Hero 1`
+	- `Hero 2`
+	- `Hero 3`
+	- `Auto por ID de página`
+	- `Aleatorio en cada carga`
 
 ## Bloques Gutenberg implementados
 
