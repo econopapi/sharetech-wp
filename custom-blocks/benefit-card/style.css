@@ -56,6 +56,24 @@
 	color: #94a3b8;
 }
 
+/* Keep RichText title/description readable in Gutenberg editor on dark card background. */
+.editor-styles-wrapper .wp-block-sharetech-benefit-card .sharetech-benefit-card__title,
+.block-editor-block-list__layout .wp-block-sharetech-benefit-card .sharetech-benefit-card__title,
+.editor-styles-wrapper .wp-block-sharetech-benefit-card .sharetech-benefit-card__description,
+.block-editor-block-list__layout .wp-block-sharetech-benefit-card .sharetech-benefit-card__description {
+	color: inherit;
+}
+
+.editor-styles-wrapper .wp-block-sharetech-benefit-card .sharetech-benefit-card__title,
+.block-editor-block-list__layout .wp-block-sharetech-benefit-card .sharetech-benefit-card__title {
+	color: #f8fafc !important;
+}
+
+.editor-styles-wrapper .wp-block-sharetech-benefit-card .sharetech-benefit-card__description,
+.block-editor-block-list__layout .wp-block-sharetech-benefit-card .sharetech-benefit-card__description {
+	color: #94a3b8 !important;
+}
+
 @media (max-width: 640px) {
 	.wp-block-sharetech-benefit-card.sharetech-benefit-card {
 		min-height: auto;
