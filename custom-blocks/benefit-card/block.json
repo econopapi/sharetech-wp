@@ -39,6 +39,10 @@
 		"enableHover": {
 			"type": "boolean",
 			"default": false
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 56
 		}
 	},
 	"editorScript": "file:./index.js",

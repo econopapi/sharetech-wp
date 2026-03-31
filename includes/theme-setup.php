@@ -18,4 +18,5 @@ function sharetech_theme_setup() {
 	require_once get_stylesheet_directory() . '/includes/enqueue.php';
 	require_once get_stylesheet_directory() . '/includes/blocks.php';
 	require_once get_stylesheet_directory() . '/includes/footer.php';
+	require_once get_stylesheet_directory() . '/includes/page-hero.php';
 }
