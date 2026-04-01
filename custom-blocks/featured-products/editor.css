@@ -1,0 +1,141 @@
+.sharetech-featured-products-editor {
+	border: 1px dashed #cbd5e1;
+	background: #f8fafc;
+	padding: 16px;
+	border-radius: 10px;
+}
+
+.sharetech-featured-products-editor__counter {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	color: #1d4ed8;
+	background: #dbeafe;
+	border-radius: 999px;
+	padding: 4px 10px;
+	margin: 0 0 10px;
+}
+
+.sharetech-featured-products-editor__products-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: 10px;
+	max-height: 300px;
+	overflow-y: auto;
+	padding: 10px;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	background: #ffffff;
+}
+
+.sharetech-featured-products-editor__product-item {
+	appearance: none;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 8px;
+	display: grid;
+	gap: 6px;
+	text-align: left;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.sharetech-featured-products-editor__product-item:hover,
+.sharetech-featured-products-editor__product-item:focus-visible {
+	border-color: #3b82f6;
+	outline: none;
+}
+
+.sharetech-featured-products-editor__product-item.is-selected {
+	border-color: #ea580c;
+	background: #fff7ed;
+	box-shadow: 0 0 0 1px rgba(234, 88, 12, 0.2);
+}
+
+.sharetech-featured-products-editor__product-item img {
+	width: 100%;
+	height: 90px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+.sharetech-featured-products-editor__product-name {
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.3;
+	color: #0f172a;
+}
+
+.sharetech-featured-products-editor__product-price {
+	font-size: 12px;
+	font-weight: 700;
+	color: #ea580c;
+}
+
+.sharetech-featured-products-editor__selected {
+	list-style: none;
+	padding: 0;
+	margin: 12px 0 0;
+	display: grid;
+	gap: 8px;
+}
+
+.sharetech-featured-products-editor__selected li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	font-size: 12px;
+	padding: 6px 8px;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	background: #ffffff;
+}
+
+.sharetech-featured-products-editor__selected button {
+	background: #ffffff;
+	border: 1px solid #dc2626;
+	color: #dc2626;
+	border-radius: 4px;
+	font-size: 11px;
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+.sharetech-featured-products-editor__preview {
+	margin-top: 20px;
+}
+
+.sharetech-featured-products-editor__preview-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 12px;
+}
+
+.sharetech-featured-products-editor__preview-item {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.sharetech-featured-products-editor__preview-item img {
+	width: 100%;
+	height: 120px;
+	object-fit: cover;
+}
+
+.sharetech-featured-products-editor__preview-item h4 {
+	font-size: 13px;
+	line-height: 1.3;
+	margin: 10px 10px 6px;
+	color: #0f172a;
+}
+
+.sharetech-featured-products-editor__preview-item span {
+	display: block;
+	margin: 0 10px 12px;
+	font-weight: 700;
+	color: #ea580c;
+	font-size: 13px;
+}

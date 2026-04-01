@@ -128,6 +128,30 @@ Notas de implementación:
 - Layout dividido en dos paneles (media + contenido), inspirado en el mockup.
 - Responsive para mobile con apilado vertical automático.
 
+### `sharetech/featured-products`
+
+Bloque dinámico para mostrar productos WooCommerce destacados con render en servidor (PHP), alineado a la identidad visual de ShareTech.
+
+Campos editables incluidos:
+
+- Título de sección
+- Cantidad de productos a mostrar (1 a 12)
+- Tipo de filtro:
+	- Selección manual
+	- Por etiquetas
+	- Productos en oferta
+	- Productos destacados
+- Selección manual de productos (con buscador y lista de seleccionados)
+- Selección de etiquetas para filtro por tags
+- Toggle para aleatorizar el orden de productos
+
+Notas de implementación:
+
+- El bloque se registra de forma automática desde `custom-blocks/featured-products/block.json`.
+- El render se resuelve en servidor mediante `custom-blocks/featured-products/render.php` y la lógica de negocio en `includes/featured-products.php`.
+- Se valida stock y visibilidad de producto para evitar mostrar ítems no comprables.
+- Incluye estilos de editor (`editor.css`) y frontend (`style.css`) con enfoque responsive.
+
 ## Personalizaciones de estilos globales
 
 - Se agregó estilo scoped para formularios de newsletter de Forminator dentro de `.sharetech-newsletter-form`.
