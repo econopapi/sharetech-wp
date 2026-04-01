@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sharetech/featured-products",
+	"version": "1.0.0",
+	"title": "ShareTech Productos Destacados",
+	"category": "widgets",
+	"icon": "products",
+	"description": "Bloque dinámico para mostrar productos destacados de WooCommerce con filtros configurables.",
+	"textdomain": "sharetech",
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Productos destacados"
+		},
+		"productsToShow": {
+			"type": "number",
+			"default": 4
+		},
+		"filterType": {
+			"type": "string",
+			"default": "manual"
+		},
+		"selectedProducts": {
+			"type": "array",
+			"default": []
+		},
+		"selectedTags": {
+			"type": "array",
+			"default": []
+		},
+		"randomizeProducts": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"render": "file:./render.php"
+}

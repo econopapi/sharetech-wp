@@ -1,0 +1,226 @@
+.sharetech-featured-products {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 0 20px;
+}
+
+.sharetech-featured-products__title-main {
+	font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+	line-height: 1.15;
+	text-align: center;
+	margin: 0 0 30px;
+	color: #0f172a;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.sharetech-featured-products__grid {
+	display: grid;
+	gap: 18px;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sharetech-featured-products__grid.products-count-1 {
+	grid-template-columns: minmax(0, 320px);
+	justify-content: center;
+}
+
+.sharetech-featured-products__grid.products-count-2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sharetech-featured-products__grid.products-count-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sharetech-featured-products__item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(180deg, #0f2548 0%, #0a1b36 100%);
+	border: 1px solid rgba(96, 165, 250, 0.28);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 10px 24px rgba(1, 14, 36, 0.36);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sharetech-featured-products__item:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 30px rgba(1, 14, 36, 0.5);
+}
+
+.sharetech-featured-products__badges {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 3;
+	display: flex;
+	gap: 6px;
+}
+
+.sharetech-featured-products__badge {
+	font-size: 10px;
+	font-weight: 800;
+	padding: 4px 8px;
+	border-radius: 999px;
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.sharetech-featured-products__badge--sale {
+	background: #dc2626;
+	color: #ffffff;
+}
+
+.sharetech-featured-products__badge--recommended {
+	background: #1d4ed8;
+	color: #ffffff;
+}
+
+.sharetech-featured-products__badge--featured {
+	background: #0f172a;
+	color: #bfdbfe;
+}
+
+.sharetech-featured-products__image-wrap {
+	aspect-ratio: 4 / 3;
+	background: radial-gradient(circle at 70% 10%, #1e3a66 0%, #132b4f 42%, #0d2346 100%);
+}
+
+.sharetech-featured-products__image-wrap a,
+.sharetech-featured-products__image-wrap img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.sharetech-featured-products__image-wrap img {
+	object-fit: cover;
+}
+
+.sharetech-featured-products__content {
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	flex: 1;
+}
+
+.sharetech-featured-products__rating {
+	display: inline-flex;
+	align-items: center;
+}
+
+.sharetech-featured-products__stars {
+	display: inline-flex;
+	gap: 2px;
+}
+
+.sharetech-featured-products__star {
+	font-size: 13px;
+	line-height: 1;
+	color: #cbd5e1;
+}
+
+.sharetech-featured-products__star--filled {
+	color: #f59e0b;
+}
+
+.sharetech-featured-products__brand {
+	font-size: 11px;
+	font-weight: 600;
+	color: #93c5fd;
+	margin: 0;
+}
+
+.sharetech-featured-products__title {
+	margin: 0;
+	font-size: 2em;
+	line-height: 1.35;
+	font-weight: 700;
+	min-height: 36px;
+}
+
+.sharetech-featured-products__title a {
+	color: #e2e8f0;
+	text-decoration: none;
+}
+
+.sharetech-featured-products__title a:hover,
+.sharetech-featured-products__title a:focus-visible {
+	color: #bfdbfe;
+}
+
+.sharetech-featured-products__price {
+	min-height: 40px;
+}
+
+.sharetech-featured-products__price .price,
+.sharetech-featured-products__price .woocommerce-Price-amount,
+.sharetech-featured-products__price .amount {
+	color: #60a5fa;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.sharetech-featured-products__price del .woocommerce-Price-amount,
+.sharetech-featured-products__price del .amount {
+	color: #7c8eaa;
+	font-size: 0.9rem;
+}
+
+.sharetech-featured-products__cart {
+	margin-top: auto;
+}
+
+.sharetech-featured-products__cart .button,
+.sharetech-featured-products__cart a.button,
+.sharetech-featured-products__cart .added_to_cart {
+	width: 100%;
+	display: inline-flex !important;
+	justify-content: center !important;
+	align-items: center;
+	text-align: center !important;
+	float: none !important;
+	min-height: 34px;
+	border-radius: 4px;
+	border: 0;
+	background: #1d4ed8;
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+
+.sharetech-featured-products__cart .button:hover,
+.sharetech-featured-products__cart .button:focus-visible {
+	background: #1e40af;
+	color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+	.sharetech-featured-products__grid,
+	.sharetech-featured-products__grid.products-count-3,
+	.sharetech-featured-products__grid.products-count-4 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.sharetech-featured-products {
+		padding: 0 14px;
+	}
+
+	.sharetech-featured-products__grid,
+	.sharetech-featured-products__grid.products-count-2,
+	.sharetech-featured-products__grid.products-count-3,
+	.sharetech-featured-products__grid.products-count-4 {
+		grid-template-columns: 1fr;
+	}
+
+	.sharetech-featured-products__title-main {
+		font-size: 1.5rem;
+		margin-bottom: 22px;
+	}
+}
