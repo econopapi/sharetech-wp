@@ -12,6 +12,7 @@ Licencia: Pendiente
 	- `theme-setup.php`: carga de módulos internos.
 	- `enqueue.php`: encolado de assets globales del tema.
 	- `blocks.php`: registro de custom blocks de Gutenberg.
+	- `woocommerce-editor.php`: integración de editor de bloques para productos WooCommerce.
 	- `footer.php`: override del footer de Astra + settings de Customizer + registro de menús de footer.
 	- `page-hero.php`: helpers para resolver imagen Hero en páginas (`featured image` o fallback por defecto).
 - `custom-blocks/`: bloques personalizados por feature.
@@ -156,6 +157,23 @@ Notas de implementación:
 
 - Se agregó estilo scoped para formularios de newsletter de Forminator dentro de `.sharetech-newsletter-form`.
 - Esta personalización aplica layout horizontal (input + botón), estados de foco accesibles, y comportamiento responsive.
+
+## WooCommerce: descripción y descripción corta con bloques
+
+Se habilitó el editor de bloques de WordPress (Gutenberg) para el post type `product` de WooCommerce, de forma modular y sin cargar esta lógica en `functions.php`.
+
+Comportamiento:
+
+- La descripción principal del producto se edita con el editor de bloques.
+- La descripción corta del producto soporta render de bloques cuando contiene markup de Gutenberg.
+- Se habilita soporte de `excerpt` en `product` para gestionarla dentro del flujo moderno de edición del producto.
+
+Notas de implementación:
+
+- Módulo dedicado: `includes/woocommerce-editor.php`.
+- Carga del módulo desde `includes/theme-setup.php`, manteniendo `functions.php` como entry-point liviano.
+- Render de bloques en descripción corta mediante el filtro `woocommerce_short_description`.
+- Se fuerza el uso de block editor tanto a nivel de post type como a nivel de post (`use_block_editor_for_post_type` y `use_block_editor_for_post`).
 
 ## Footer personalizado (override Astra)
 
