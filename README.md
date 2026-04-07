@@ -93,6 +93,7 @@ Notas de implementación:
 - El hover es opcional y se controla tarjeta por tarjeta.
 - El bloque está pensado para que sólo desarrolles los cards como componentes atómicos.
 - El registro de bloques ahora es automático para cualquier `custom-blocks/*/block.json`.
+- Cuando la tarjeta está anidada dentro de `Columns`, detecta ese contexto por selector estructural y se estira a la altura de la columna para evitar gaps visuales por diferencias de contenido.
 
 ### `sharetech/feature-strip`
 
