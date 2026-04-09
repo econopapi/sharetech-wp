@@ -674,22 +674,95 @@ body.page-template-default:not(.home) .site-content > .ast-container {
 
 @media (max-width: 767px) {
     .sharetech-shop-wrapper {
-        width: min(1400px, 94%);
+        width: min(1400px, 96.8%);
+    }
+
+    .sharetech-shop-hero {
+        margin: 0.35rem 0 0.9rem;
+        border-radius: 14px;
+    }
+
+    .sharetech-shop-hero__inner {
+        padding: 0.95rem 0.9rem;
+    }
+
+    .sharetech-shop-hero__title {
+        font-size: clamp(1.35rem, 6.2vw, 1.8rem);
     }
 
     .sharetech-shop-category {
+        margin-top: 0.95rem;
         border-radius: 12px;
     }
 
+    .sharetech-shop-category__header {
+        padding: 0.75rem;
+    }
+
+    .sharetech-shop-category__description {
+        margin-top: 0.55rem;
+        line-height: 1.45;
+    }
+
+    .sharetech-shop-subcategories {
+        margin-top: 0.8rem;
+        gap: 0.45rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sharetech-shop-subcategory-card {
+        min-height: 54px;
+        padding: 0.5rem 0.55rem;
+    }
+
+    .sharetech-shop-subcategory-card__name {
+        font-size: 0.9rem;
+    }
+
     .sharetech-shop-products-grid {
-        padding: 0.9rem;
+        padding: 0.55rem;
+        gap: 0.55rem;
+    }
+
+    .sharetech-shop-products-grid li.product {
+        border-radius: 10px;
+        padding: 0.55rem;
+    }
+
+    .sharetech-shop-products-grid li.product .astra-shop-summary-wrap {
+        padding: 0.35rem;
+    }
+
+    .sharetech-shop-products-grid li.product a.button,
+    .sharetech-shop-products-grid li.product a.add_to_cart_button,
+    .sharetech-shop-products-grid li.product .button {
+        padding: 0.5rem 0.95rem;
+        min-height: 38px;
+        font-size: 0.95rem;
     }
 
     .sharetech-shop-category__footer {
-        padding: 0 0.9rem 1rem;
+        padding: 0 0.65rem 0.75rem;
     }
 
     .sharetech-shop-category__cta {
+        min-height: 42px;
+        padding: 0.58rem 0.9rem;
         width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .sharetech-shop-wrapper {
+        width: min(1400px, 97.8%);
+    }
+
+    .sharetech-shop-products-grid {
+        padding: 0.45rem;
+        gap: 0.45rem;
+    }
+
+    .sharetech-shop-products-grid li.product {
+        padding: 0.45rem;
     }
 }
