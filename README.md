@@ -176,6 +176,35 @@ Notas de implementación:
 - Render de bloques en descripción corta mediante el filtro `woocommerce_short_description`.
 - Se fuerza el uso de block editor tanto a nivel de post type como a nivel de post (`use_block_editor_for_post_type` y `use_block_editor_for_post`).
 
+## WooCommerce: loop principal de tienda por categorías padre
+
+Se implementó un override del archivo de archivo de productos de WooCommerce para que la página principal de tienda (`/shop`) se renderice como secciones por categoría principal.
+
+Comportamiento:
+
+- En la página principal de tienda sin búsqueda/filtros activos, se muestran secciones por cada categoría padre de `product_cat`.
+- Cada sección incluye:
+	- Encabezado con nombre y descripción de categoría.
+	- Listado de subcategorías (si existen), con imagen y filtro dinámico en el mismo contenedor (sin navegación de página).
+	- Grid de hasta 8 productos recientes de esa categoría.
+	- CTA para ver el archivo completo de la categoría.
+- Regla de default para filtros de subcategoría:
+	- Si la categoría tiene una sola subcategoría, queda seleccionada automáticamente al cargar.
+	- Si tiene múltiples subcategorías, se inicia en estado `Todos`.
+- Motion UI (animaciones sutiles):
+	- Entrada escalonada de secciones de categoría en el primer render del template.
+	- Transición suave de tarjetas al cambiar subcategoría (sin recarga de página).
+	- Respeto de accesibilidad mediante `prefers-reduced-motion`.
+- En categoría específica, búsqueda o tienda con filtros URL activos, se mantiene el loop nativo de WooCommerce (ordenamiento, contador, paginación y no-results).
+
+Arquitectura:
+
+- `woocommerce/archive-product.php`: template override del archivo de productos.
+- `includes/shop-archive.php`: helpers de lógica de negocio para resolver contexto principal, categorías, subcategorías y query por categoría.
+- `assets/js/shop-archive-filters.js`: comportamiento de filtrado por subcategoría en frontend, por sección de categoría.
+- `includes/theme-setup.php`: carga modular del nuevo archivo de includes.
+- `style.css`: sección `WooCommerce custom shop archive` con estilos responsive y estados de foco accesibles.
+
 ## Footer personalizado (override Astra)
 
 Se implementó un footer custom que reemplaza el footer por defecto de Astra y se gestiona desde WordPress, sin editar código.
