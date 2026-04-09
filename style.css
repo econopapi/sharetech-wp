@@ -429,3 +429,267 @@ body.page-template-default:not(.home) .site-content > .ast-container {
         border-radius: 10px;
     }
 }
+
+/* WooCommerce custom shop archive */
+
+.woocommerce-js .products ul, .woocommerce-js ul.products {
+    padding: 0.75em!important;
+}
+
+.sharetech-shop-wrapper {
+    width: min(1400px, 92%);
+    margin: 0 auto;
+    padding-bottom: clamp(2rem, 5vw, 4rem);
+    color: #dbe7ff;
+}
+
+.sharetech-shop-hero {
+    margin: clamp(0.5rem, 2vw, 1.2rem) 0 clamp(1.2rem, 3vw, 2rem);
+    border-radius: 18px;
+    background:
+        linear-gradient(130deg, #041736 0%, #0a2b5c 100%),
+        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.12), transparent 55%);
+    border: 1px solid rgba(116, 153, 211, 0.24);
+}
+
+.sharetech-shop-hero__inner {
+    padding: clamp(1.2rem, 3.2vw, 2.5rem);
+}
+
+.sharetech-shop-hero__title {
+    margin: 0;
+    color: #eff6ff;
+    font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.sharetech-shop-category {
+    margin-top: clamp(1.4rem, 3vw, 2.5rem);
+    border-radius: 16px;
+    border: 1px solid rgba(94, 131, 191, 0.38);
+    background: #102748;
+    box-shadow: 0 18px 40px rgba(1, 8, 24, 0.45);
+    overflow: hidden;
+}
+
+.sharetech-shop-category__header {
+    padding: clamp(1rem, 2.4vw, 1.8rem);
+    background: linear-gradient(160deg, #153463 0%, #122e57 100%);
+    border-bottom: 1px solid rgba(86, 122, 181, 0.35);
+}
+
+.sharetech-shop-category__title {
+    margin: 0;
+    color: #eaf2ff;
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+    line-height: 1.2;
+}
+
+.sharetech-shop-category__description {
+    margin: 0.8rem 0 0;
+    color: #b7caea;
+    max-width: 72ch;
+    line-height: 1.6;
+}
+
+.sharetech-shop-subcategories {
+    margin: 1.1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.sharetech-shop-subcategory-card {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 62px;
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 131, 191, 0.42);
+    background: #163864;
+    color: #dce9ff;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.sharetech-shop-subcategory-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(103, 160, 247, 0.7);
+    box-shadow: 0 10px 22px rgba(5, 14, 33, 0.42);
+}
+
+.sharetech-shop-subcategory-card:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.sharetech-shop-subcategory-card__image {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sharetech-shop-subcategory-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sharetech-shop-subcategory-card__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sharetech-shop-products-grid {
+    margin: 0;
+    padding: clamp(1rem, 2.2vw, 1.8rem);
+    row-gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.sharetech-shop-products-grid li.product {
+    background: #0f2f59;
+    border: 1px solid rgba(93, 128, 181, 0.36);
+    border-radius: 12px;
+    padding: 0.8rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sharetech-shop-products-grid li.product:hover {
+    transform: translateY(-2px);
+    border-color: rgba(103, 160, 247, 0.68);
+    box-shadow: 0 12px 26px rgba(4, 13, 30, 0.4);
+}
+
+.sharetech-shop-products-grid li.product .woocommerce-loop-product__title,
+.sharetech-shop-products-grid li.product .ast-woo-product-title,
+.sharetech-shop-products-grid li.product h2,
+.sharetech-shop-products-grid li.product h3 {
+    color: #edf4ff;
+}
+
+.sharetech-shop-products-grid li.product .price,
+.sharetech-shop-products-grid li.product .price * {
+    color: #c8daf8;
+}
+
+.sharetech-shop-products-grid li.product .button-wrap,
+.sharetech-shop-products-grid li.product .ast-woo-product-cart,
+.sharetech-shop-products-grid li.product .ast-loop-product__actions,
+.sharetech-shop-products-grid li.product .astra-shop-summary-wrap {
+    width: 100%;
+    text-align: center !important;
+}
+
+.sharetech-shop-products-grid li.product .button-wrap,
+.sharetech-shop-products-grid li.product .ast-woo-product-cart,
+.sharetech-shop-products-grid li.product .ast-loop-product__actions {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.astra-shop-summary-wrap {
+    padding: 0.5em;
+}
+
+.attachment-woocommerce_thumbnail,
+.size-woocommerce_thumbnail {
+    border-radius: 10px;
+}
+
+.sharetech-shop-products-grid li.product a.button,
+.sharetech-shop-products-grid li.product a.add_to_cart_button,
+.sharetech-shop-products-grid li.product .button {
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    max-width: 100%;
+    margin: 0 auto !important;
+    background: #1d68db;
+    color: #ffffff;
+    border: 1px solid rgba(70, 136, 235, 0.3);
+}
+
+.sharetech-shop-products-grid li.product a.button:hover,
+.sharetech-shop-products-grid li.product a.add_to_cart_button:hover,
+.sharetech-shop-products-grid li.product .button:hover {
+    background: #1657bd;
+}
+
+.sharetech-shop-category__footer {
+    padding: 0 clamp(1rem, 2.2vw, 1.8rem) clamp(1rem, 2.2vw, 1.8rem);
+}
+
+.sharetech-shop-category__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(70, 136, 235, 0.25);
+    background: #1d68db;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.sharetech-shop-category__cta:hover {
+    background: #1657bd;
+    transform: translateY(-1px);
+}
+
+.sharetech-shop-category__cta:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+.sharetech-shop-category__empty,
+.sharetech-shop-empty {
+    margin: 0;
+    padding: 1rem 1.2rem;
+    color: #c8daf8;
+}
+
+.sharetech-shop-controls,
+.sharetech-shop-footer {
+    margin: 1rem 0;
+}
+
+@media (max-width: 991px) {
+    .sharetech-shop-subcategories {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .sharetech-shop-wrapper {
+        width: min(1400px, 94%);
+    }
+
+    .sharetech-shop-category {
+        border-radius: 12px;
+    }
+
+    .sharetech-shop-products-grid {
+        padding: 0.9rem;
+    }
+
+    .sharetech-shop-category__footer {
+        padding: 0 0.9rem 1rem;
+    }
+
+    .sharetech-shop-category__cta {
+        width: 100%;
+    }
+}
