@@ -14,6 +14,14 @@ do_action( 'woocommerce_before_main_content' );
 $is_main_shop_context = sharetech_shop_is_main_archive_context();
 
 if ( $is_main_shop_context ) {
+	wp_enqueue_script(
+		'sharetech-shop-archive-filters',
+		get_stylesheet_directory_uri() . '/assets/js/shop-archive-filters.js',
+		array(),
+		CHILD_THEME_SHARETECH_VERSION,
+		true
+	);
+
 	echo '<style>.woocommerce-breadcrumb{display:none;}</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 ?>
@@ -35,9 +43,10 @@ if ( $is_main_shop_context ) {
 				$category_link  = is_wp_error( $category_link ) ? '#' : $category_link;
 				$subcategories  = sharetech_shop_get_subcategories( $category->term_id );
 				$products_query = sharetech_shop_get_products_for_category( $category->term_id, 8 );
+				$default_filter = ( ! empty( $subcategories ) && 1 === count( $subcategories ) ) ? (string) $subcategories[0]->slug : 'all';
 				?>
 
-				<section class="sharetech-shop-category" aria-labelledby="sharetech-category-title-<?php echo esc_attr( (string) $category->term_id ); ?>">
+				<section class="sharetech-shop-category" data-default-filter="<?php echo esc_attr( $default_filter ); ?>" aria-labelledby="sharetech-category-title-<?php echo esc_attr( (string) $category->term_id ); ?>">
 					<div class="sharetech-shop-category__header">
 						<h2 id="sharetech-category-title-<?php echo esc_attr( (string) $category->term_id ); ?>" class="sharetech-shop-category__title">
 							<?php echo esc_html( $category->name ); ?>
@@ -48,21 +57,28 @@ if ( $is_main_shop_context ) {
 
 						<?php if ( ! empty( $subcategories ) ) : ?>
 							<ul class="sharetech-shop-subcategories" aria-label="<?php echo esc_attr( sprintf( __( 'Subcategorias de %s', 'sharetech' ), $category->name ) ); ?>">
+								<?php if ( count( $subcategories ) > 1 ) : ?>
+									<li>
+										<button type="button" class="sharetech-shop-subcategory-card is-active" data-filter="all" aria-pressed="true">
+											<span class="sharetech-shop-subcategory-card__name"><?php esc_html_e( 'Todos', 'sharetech' ); ?></span>
+										</button>
+									</li>
+								<?php endif; ?>
+
 								<?php foreach ( $subcategories as $subcategory ) : ?>
 									<?php
-									$subcategory_link  = get_term_link( $subcategory );
-									$subcategory_link  = is_wp_error( $subcategory_link ) ? '#' : $subcategory_link;
 									$subcategory_image = sharetech_shop_get_category_image_url( $subcategory->term_id );
+									$is_default_subcat = $default_filter === (string) $subcategory->slug;
 									?>
 									<li>
-										<a class="sharetech-shop-subcategory-card" href="<?php echo esc_url( $subcategory_link ); ?>">
+										<button type="button" class="sharetech-shop-subcategory-card<?php echo $is_default_subcat ? ' is-active' : ''; ?>" data-filter="<?php echo esc_attr( (string) $subcategory->slug ); ?>" aria-pressed="<?php echo $is_default_subcat ? 'true' : 'false'; ?>">
 											<?php if ( '' !== $subcategory_image ) : ?>
 												<span class="sharetech-shop-subcategory-card__image">
 													<img src="<?php echo esc_url( $subcategory_image ); ?>" alt="<?php echo esc_attr( $subcategory->name ); ?>" loading="lazy" decoding="async" />
 												</span>
 											<?php endif; ?>
 											<span class="sharetech-shop-subcategory-card__name"><?php echo esc_html( $subcategory->name ); ?></span>
-										</a>
+										</button>
 									</li>
 								<?php endforeach; ?>
 							</ul>
@@ -79,6 +95,10 @@ if ( $is_main_shop_context ) {
 								?>
 							<?php endwhile; ?>
 						</ul>
+
+						<p class="sharetech-shop-products-grid__empty" hidden>
+							<?php esc_html_e( 'No hay productos para esta subcategoria.', 'sharetech' ); ?>
+						</p>
 
 						<div class="sharetech-shop-category__footer">
 							<a href="<?php echo esc_url( $category_link ); ?>" class="sharetech-shop-category__cta">
